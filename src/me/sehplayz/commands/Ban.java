@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 /**
  * Created by sehplayz.
  */
-public class ban implements CommandExecutor {
+public class Ban implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
