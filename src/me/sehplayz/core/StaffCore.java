@@ -1,13 +1,17 @@
 package me.sehplayz.core;
 
+import me.sehplayz.commands.Ban;
+import me.sehplayz.commands.Kick;
 import me.sehplayz.commands.Staff;
 import me.sehplayz.listener.StaffOn;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * Created by sehplayz.
+ *
  */
 public class StaffCore extends JavaPlugin {
 
@@ -28,6 +32,7 @@ public class StaffCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Enable plugin!");
         registerCommands();
         registerListeners();
     }
@@ -45,5 +50,8 @@ public class StaffCore extends JavaPlugin {
 
     public void registerCommands() {
         this.getCommand("staff").setExecutor(new Staff());
+        this.getCommand("ban").setExecutor(new Ban());
+        this.getCommand("kick").setExecutor(new Kick());
+
     }
 }
