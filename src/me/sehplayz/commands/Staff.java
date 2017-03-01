@@ -18,28 +18,30 @@ public class Staff implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         Player p = (Player) commandSender;
-        if(strings.length == 0) {
-            if(strings[0].startsWith("on")) {
-                if(p.hasPermission("ss.command.staff")) {
-                new StaffOn();
-                staffmode = true;
-                for (Player player : Bukkit.getServer().getOnlinePlayers()) {
-                    player.hidePlayer(p);
-                }
-            }else {
+        if(command.getName().equalsIgnoreCase("staff")) {
+         if(strings.length == 0) {
+            if (strings[0].startsWith("on")) {
+                if (p.hasPermission("ss.command.staff")) {
+                    new StaffOn();
+                    staffmode = true;
+                    for (Player player : Bukkit.getServer().getOnlinePlayers()) {
+                        player.hidePlayer(p);
+                    }
+                } else {
                     Utils.getInstance().Message(p, "&l&4You have no permission");
                 }
-            }else if(strings[0].startsWith("off")) {
-                if(p.hasPermission("ss.command.staff")) {
+            } else if (strings[0].startsWith("off")) {
+                if (p.hasPermission("ss.command.staff")) {
                     new StaffOn().new StaffOff();
                     staffmode = false;
                     for (Player player : Bukkit.getServer().getOnlinePlayers()) {
                         player.showPlayer(p);
                     }
-                }else {
+                } else {
                     Utils.getInstance().Message(p, "&l&4You have no permission");
                 }
             }
+        }
 
         }else {
             Utils.getInstance().Message(p, "&l&7Using: /staff on/off");

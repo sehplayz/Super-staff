@@ -11,6 +11,13 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class StaffCore extends JavaPlugin {
 
+    //TODO: add staff chat
+    //TODO: add ss, freeze, random tp, inventory see, social spy
+    //TODO: add custom inventory and items
+    //TODO: add warn commands
+    //TODO: add silent ban
+    //TODO: add ip checker
+
     private static final StaffCore instance = new StaffCore();
     private String version = "0.1";
 
