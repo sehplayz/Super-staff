@@ -19,7 +19,7 @@ public class StaffCore extends JavaPlugin {
     //TODO: add ip checker
 
     private static final StaffCore instance = new StaffCore();
-    private String version = "0.1";
+    private String version = "DEV";
 
 
     public static StaffCore getInstance() {
