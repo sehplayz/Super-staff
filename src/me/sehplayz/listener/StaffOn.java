@@ -1,6 +1,6 @@
 package me.sehplayz.listener;
 
-import me.sehplayz.commands.staff;
+import me.sehplayz.commands.Staff;
 import me.sehplayz.util.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -32,15 +32,30 @@ public class StaffOn implements Listener {
     @EventHandler
     public static void onJoin(PlayerJoinEvent event) {
         Player p = event.getPlayer();
-        if(staff.staffmode == true) {
+        if (Staff.staffmode == true) {
             for(Player player : Bukkit.getServer().getOnlinePlayers()) {
                 player.hidePlayer(p);
             }
-        }else if(staff.staffmode == false) {
+        } else if (Staff.staffmode == false) {
             for(Player player : Bukkit.getServer().getOnlinePlayers()) {
                 player.showPlayer(p);
                 Utils.getInstance().Message(p, "&l&7Player's can see you now!");
             }
+        }
+    }
+
+    public class StaffOff implements Listener {
+
+        @EventHandler
+        public void onDrop(PlayerDropItemEvent event) {
+            Player p = event.getPlayer();
+            event.setCancelled(false);
+        }
+
+        @EventHandler
+        public void onPickup(PlayerPickupItemEvent event) {
+            Player p = event.getPlayer();
+            event.setCancelled(false);
         }
     }
 }

@@ -1,6 +1,5 @@
 package me.sehplayz.commands;
 
-import me.sehplayz.listener.StaffOff;
 import me.sehplayz.listener.StaffOn;
 import me.sehplayz.util.Utils;
 import org.bukkit.Bukkit;
@@ -12,7 +11,7 @@ import org.bukkit.entity.Player;
 /**
  * Created by sehplayz.
  */
-public class staff implements CommandExecutor {
+public class Staff implements CommandExecutor {
 
     public static boolean staffmode;
 
@@ -32,7 +31,7 @@ public class staff implements CommandExecutor {
                 }
             }else if(strings[0].startsWith("off")) {
                 if(p.hasPermission("ss.command.staff")) {
-                    new StaffOff();
+                    new StaffOn().new StaffOff();
                     staffmode = false;
                     for (Player player : Bukkit.getServer().getOnlinePlayers()) {
                         player.showPlayer(p);
