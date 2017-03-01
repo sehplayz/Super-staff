@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Super staff:jar">
+    <output-path>$USER_HOME$/Dropbox/Minecraft server/plugins</output-path>
+    <root id="archive" name="Super staff.jar">
+      <element id="module-output" name="Super staff" />
+      <element id="file-copy" path="D:/stuff/apps/build tools 1.8.8/craftbukkit-1.8.8.jar" />
+    </root>
+  </artifact>
+</component>

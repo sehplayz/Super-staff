@@ -16,9 +16,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class StaffCore extends JavaPlugin {
 
     //TODO: add staff chat
-    //TODO: add ss, freeze, random tp, inventory see, social spy
+    //TODO: add ss, random tp, inventory see, social spy
     //TODO: add custom inventory and items
-    //TODO: add warn commands
+    //TODO: add warn command
     //TODO: add silent ban
     //TODO: add ip checker
 
@@ -32,7 +32,7 @@ public class StaffCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Enable plugin!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Enabled plugin! version: " + version);
         registerCommands();
         registerListeners();
     }

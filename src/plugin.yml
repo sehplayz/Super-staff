@@ -1,0 +1,11 @@
+name: Super staff
+main: me.sehplayz.core.StaffCore
+author: sehplayz
+version: 0.1
+commands:
+    ban:
+      description: 'Bans a Player'
+    kick:
+      description: 'Kicks a Player'
+    staff:
+      description: 'Go in Staff mode'
