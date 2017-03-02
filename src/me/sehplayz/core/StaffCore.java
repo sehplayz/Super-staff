@@ -4,10 +4,13 @@ import me.sehplayz.commands.Ban;
 import me.sehplayz.commands.Kick;
 import me.sehplayz.commands.Staff;
 import me.sehplayz.listener.StaffOn;
+import me.sehplayz.util.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.logging.Level;
 
 /**
  * Created by sehplayz.
@@ -22,7 +25,7 @@ public class StaffCore extends JavaPlugin {
     //TODO: add silent ban
     //TODO: add ip checker
 
-    private static final StaffCore instance = new StaffCore();
+    private static StaffCore instance;
     private String version = "DEV";
 
 
@@ -32,13 +35,16 @@ public class StaffCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Enabled plugin! version: " + version);
+        Utils.getInstance().Logger(Level.INFO, "[SS/Super Staff] is now Enabled");
         registerCommands();
         registerListeners();
     }
 
     @Override
     public void onDisable() {
+        Utils.getInstance().Logger(Level.WARNING, "[SS/Super Staff] is now Disable");
+        this.saveConfig();
+
 
     }
 
